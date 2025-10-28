@@ -1,18 +1,16 @@
 import React from "react";
-import Links from "./Links"; // assuming you have this
+import Links from "./Links";
 
-function About({ bio, links }) {
+function About({ bio, github, linkedin }) {
   return (
     <div id="about">
       <h2>About Me</h2>
 
-      {/* only render <p> if bio is not empty */}
-      {bio && <p>{bio}</p>}
+      {bio ? <p>{bio}</p> : null}
 
       <img src="https://i.imgur.com/mV8PQxj.gif" alt="I made this" />
 
-      {/* render the Links component */}
-      <Links github={links.github} linkedIn={links.linkedIn} />
+      <Links github={github} linkedin={linkedin} />
     </div>
   );
 }
